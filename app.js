@@ -1,3 +1,8 @@
+const searchBar = document.getElementById('search')
+const submitBtn = document.getElementById('submit')
+
+submitBtn.addEventListener('click', handleSearch)
+
 async function getWeather(location){
     try {
         const response = await fetch (`http://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&APPID=d8bb32a119bbf160e2545fa1ef9df520`)
@@ -36,6 +41,12 @@ function processData(data) {
     console.log(`Wind speed is: ${data.wind.speed}mph`)
 }
 
+
+function handleSearch(e) {
+    e.preventDefault()
+    const location = searchBar.value
+    getWeather(location)
+}
 
 
 getWeather('Widnes')
