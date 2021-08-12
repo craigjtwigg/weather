@@ -5,11 +5,11 @@ const locationElement = document.querySelector('.location');
 const tempElement = document.querySelector('.temperature');
 const minElement = document.querySelector('.min');
 const maxElement = document.querySelector('.max');
-const feelsElement = document.querySelector('feels');
+const feelsElement = document.querySelector('.feels');
 const humidityElement = document.querySelector('.humidity');
 const weatherElement = document.querySelector('.weather');
 const descriptionElement = document.querySelector('.description');
-const windElement = document.querySelector('.description');
+const windElement = document.querySelector('.wind');
 
 submitBtn.addEventListener('click', handleSearch);
 
@@ -37,8 +37,8 @@ function processData(data) {
     constructor(data) {
       this.location = data.name;
       this.temp = data.main.temp;
-      this.min = data.main.min_temp;
-      this.max = data.main.max_temp;
+      this.min = data.main.temp_min;
+      this.max = data.main.temp_max;
       this.feels = data.main.feels_like;
       this.humidity = data.main.humidity;
       this.weather = data.weather[0].main;
@@ -68,20 +68,23 @@ function displayData(data) {
   // console logged the required data for the app
 
   // Temperature and humidity
-  locationElement.textContent = `Location is: ${data.location}`;
+  locationElement.textContent = `${data.location}`;
   tempElement.textContent = `Temperature is: ${data.temp}°C`;
   minElement.textContent = `Maximum temperature is: ${data.max}°C`;
   maxElement.textContent = `Minimum temperature is: ${data.min}°C`;
-  //feelsElement.textContent = `Feels like: ${data.feels}°C`;
+  feelsElement.textContent = `Feels like: ${data.feels}°C`;
   humidityElement.textContent = `Humidity is: ${data.humidity}%`;
+
 
   // Weather and description
   weatherElement.textContent = `Weather is: ${data.weather}`;
   descriptionElement.textContent = `Weather description: ${data.description}`;
 
+  
+
   // Wind
 
-  windElement.textContent = `Wind speed is: ${data.wind}mph`;
+  windElement.textContent = `Wind speed is: ${data.wind}m/s`;
 }
 
 getWeather('Widnes');

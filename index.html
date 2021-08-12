@@ -8,18 +8,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <h1>WEATHERMAN</h1>
+        
+        
+        <form>
+            <input class="search" id="search" name="search" type="input" placeholder="Enter a Town / City">
+            <button class="submit" id="submit" type="submit">Submit</button>
+        </form>
+    </header>
+     
 
-    <h1>The Weather Man</h1>
+<div class="outer">
 
-
-<p>Open the console (F12) to see the weather in my hometown!</p>
-
-<form>
-    <label for="search">Seach:</label>
-    <input class="search" id="search" name="search" type="input" placeholder="Enter a Town / City">
-    <button class="submit" id="submit" type="submit">Submit</button>
-</form>
-
+<div class="container">
 <div class="location"></div>
 <div class="temperature"></div>
 <div class="min"></div>
@@ -29,6 +31,8 @@
 <div class="weather"></div>
 <div class="description"></div>
 <div class="wind"></div>
+</div>
+</div>
 
 <script src="app.js"></script>
     
