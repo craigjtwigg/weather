@@ -36,14 +36,14 @@ function processData(data) {
   class Weather {
     constructor(data) {
       this.location = data.name;
-      this.temp = data.main.temp;
-      this.min = data.main.temp_min;
-      this.max = data.main.temp_max;
-      this.feels = data.main.feels_like;
+      this.temp = Math.round(data.main.temp);
+      this.min = Math.round(data.main.temp_min);
+      this.max = Math.round(data.main.temp_max);
+      this.feels = Math.round(data.main.feels_like);
       this.humidity = data.main.humidity;
       this.weather = data.weather[0].main;
       this.description = data.weather[0].description;
-      this.wind = data.wind.speed;
+      this.wind = Math.round(data.wind.speed);
     }
   }
 
@@ -69,22 +69,22 @@ function displayData(data) {
 
   // Temperature and humidity
   locationElement.textContent = `${data.location}`;
-  tempElement.textContent = `Temperature is: ${data.temp}°C`;
-  minElement.textContent = `Maximum temperature is: ${data.max}°C`;
-  maxElement.textContent = `Minimum temperature is: ${data.min}°C`;
+  tempElement.innerHTML = `${data.temp}<span class="degrees">°C</span>`;
+  //minElement.textContent = `Maximum temperature is: ${data.max}°C`;
+  //maxElement.textContent = `Minimum temperature is: ${data.min}°C`;
   feelsElement.textContent = `Feels like: ${data.feels}°C`;
-  humidityElement.textContent = `Humidity is: ${data.humidity}%`;
+  humidityElement.textContent = `Humidity: ${data.humidity}%`;
 
 
   // Weather and description
-  weatherElement.textContent = `Weather is: ${data.weather}`;
-  descriptionElement.textContent = `Weather description: ${data.description}`;
+  //weatherElement.textContent = `Weather is: ${data.weather}`;
+  descriptionElement.textContent = `${data.description} in...`;
 
   
 
   // Wind
 
-  windElement.textContent = `Wind speed is: ${data.wind}m/s`;
+  windElement.textContent = `Wind Speed: ${data.wind}m/s`;
 }
 
 getWeather('Widnes');

@@ -28,49 +28,48 @@ header {
 
 .logo {
   display: flex;
-
 }
 
 .sun {
-  height: 2.4rem;
+  height: 40px;
+  width: 40px;
   position: relative;
-  top: 0.2rem;
-  margin-right: 0.5rem;
+  top: 2px;
+  margin-right: 8px;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 30px;
 }
 
 input {
-    height: 2rem;
-    width: 20ch;
-    padding: 0.5rem;
-    font-family: Poppins;
-    color: black;
-    background: rgba(255, 255, 255, 0.068);
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: solid 1px darkgrey;
+  height: 40px;
+  width: 20ch;
+  padding: 10px;
+  font-family: Poppins;
+  color: black;
+  background: rgba(255, 255, 255, 0.068);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid 1px darkgrey;
 }
 
-input:focus{
-    outline-style: none;
+input:focus {
+  outline-style: none;
 }
 
 button {
-    border: none;
-    padding: 0.8rem;
-    margin: 0.5rem;
-    background: rgb(248, 190, 31);
-    font-family: Poppins;
-   
+  border: none;
+  padding: 10px;
+  margin: 10px;
+  background: rgb(253, 201, 57);
+  font-family: Poppins;
 }
 
-button:hover{
-    cursor: pointer;
-    background: yellow;
+button:hover {
+  cursor: pointer;
+  background: rgb(248, 190, 31);
 }
 
 .outer {
@@ -82,10 +81,19 @@ button:hover{
 
 .container {
   display: grid;
-  text-align: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 20px 120px 80px 80px 80px;
+  grid-template-areas:
+    'description description description'
+    'location location location'
+    'temp temp humidity'
+    'temp temp wind'
+    'temp temp feels';
+  align-items: center;
+  justify-items: center;
   gap: 1rem;
   margin: 1rem;
-  padding: 1rem 2rem 2rem 2rem;
+  padding: 30px 30px 15px 30px;
   background: rgba(255, 255, 255, 0.329);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(9.5px);
@@ -94,33 +102,106 @@ button:hover{
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
+.description {
+  grid-area: description;
+  font-size: 20px;
+  justify-self: left;
+}
+
 .location {
-  font-size: 6rem;
+  grid-area: location;
+  font-size: 100px;
+  justify-self: left;
+}
+
+.temperature {
+  grid-area: temp;
+  font-size: 300px;
+}
+
+.degrees {
+  font-size: 50px;
+  position: relative;
+  bottom: 150px;
+}
+
+.humidity {
+  grid-area: humidity;
+  justify-self: right;
+}
+
+.wind {
+  grid-area: wind;
+  justify-self: right;
+}
+
+.feels {
+  grid-area: feels;
+  justify-self: right;
 }
 
 @media only screen and (max-width: 600px) {
-    * {
-        font-size: 12px;
-    }
+  * {
+    font-size: 12px;
+  }
 
-    header {
-        padding: 0.4rem;
-    }
+  header {
+    padding: 0.4rem;
+  }
 
-    h1 {
-        font-size: 1rem;
-    }
+  h1 {
+    font-size: 1rem;
+  }
 
-    input {
-        height: 1rem;
-    }
+  input {
+    height: 1rem;
+  }
 
-    button {
-        padding: 0.5rem;
-    }
+  button {
+    padding: 0.5rem;
+  }
 
-    .container {
-        margin: 5rem;
-        gap: 2rem;
-    }
+  .container {
+    margin: 20px;
+    gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 20px 40px 80px 80px 20px;
+    grid-template-areas:
+      'description description description'
+      'location location location'
+      'temp temp temp'
+      'temp temp temp'
+      'feels wind humidity';
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .location{
+    font-size: 40px;
+  }
+  
+  .temperature{
+    font-size: 200px;
+    justify-self: left;
+  }
+
+  .degrees {
+    font-size: 40px;
+    bottom: 120px;
+  }
+  
+  .feels {
+    justify-self: center;
+    align-self: center;
+  }
+
+  .wind {
+    justify-self: center;
+  }
+
+  .humidity {
+    justify-self: center;
+  }
 }
