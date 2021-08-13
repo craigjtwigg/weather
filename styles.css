@@ -16,6 +16,7 @@ body {
 header {
   display: flex;
   align-items: center;
+  align-content: center;
   justify-content: space-between;
   padding: 0.8rem 1rem;
   background: rgba(255, 255, 255, 0.884);
@@ -34,7 +35,8 @@ input {
     width: 20ch;
     padding: 0.5rem;
     font-family: Poppins;
-    background: transparent;
+    color: black;
+    background: rgba(255, 255, 255, 0.068);
     border-top: none;
     border-left: none;
     border-right: none;

@@ -16,7 +16,7 @@ submitBtn.addEventListener('click', handleSearch);
 async function getWeather(location) {
   try {
     const response = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&APPID=d8bb32a119bbf160e2545fa1ef9df520`
+      `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&APPID=d8bb32a119bbf160e2545fa1ef9df520`
     );
     const weatherData = await response.json();
     // ... do something with the data, but for now:
