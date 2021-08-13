@@ -23,12 +23,8 @@ async function getWeather(location) {
       `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&APPID=d8bb32a119bbf160e2545fa1ef9df520`
     );
     const weatherData = await response.json();
-    // ... do something with the data, but for now:
-
     console.log(weatherData);
-
     processData(weatherData);
-
     return weatherData;
   } catch (error) {
     console.log('ERROR: uh oh, spagghetti-ohs');
@@ -50,12 +46,8 @@ function processData(data) {
       this.wind = Math.round(data.wind.speed);
     }
   }
-
   const newWeather = new Weather(data)
-
   displayData(newWeather)
-
-
 }
 
 function handleSearch(e) {
@@ -73,28 +65,11 @@ function handleMobileSearch(e) {
 }
 
 function displayData(data) {
-  // ...
-
-
-  // console logged the required data for the app
-
-  // Temperature and humidity
   locationElement.textContent = `${data.location}`;
   tempElement.innerHTML = `${data.temp}<span class="degrees">°C</span>`;
-  //minElement.textContent = `Maximum temperature is: ${data.max}°C`;
-  //maxElement.textContent = `Minimum temperature is: ${data.min}°C`;
   feelsElement.textContent = `Feels like: ${data.feels}°C`;
   humidityElement.textContent = `Humidity: ${data.humidity}%`;
-
-
-  // Weather and description
-  //weatherElement.textContent = `Weather is: ${data.weather}`;
   descriptionElement.textContent = `${data.description} in...`;
-
-  
-
-  // Wind
-
   windElement.textContent = `Wind Speed: ${data.wind}m/s`;
 }
 
