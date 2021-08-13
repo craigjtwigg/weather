@@ -1,6 +1,9 @@
 const searchBar = document.getElementById('search');
 const submitBtn = document.getElementById('submit');
 
+const mobileSearch = document.getElementById('mobile-search');
+const mobileSubmit = document.getElementById('mobile-submit');
+
 const locationElement = document.querySelector('.location');
 const tempElement = document.querySelector('.temperature');
 const minElement = document.querySelector('.min');
@@ -12,6 +15,7 @@ const descriptionElement = document.querySelector('.description');
 const windElement = document.querySelector('.wind');
 
 submitBtn.addEventListener('click', handleSearch);
+mobileSubmit.addEventListener('click', handleMobileSearch)
 
 async function getWeather(location) {
   try {
@@ -57,6 +61,13 @@ function processData(data) {
 function handleSearch(e) {
   e.preventDefault();
   const location = searchBar.value;
+  getWeather(location);
+  searchBar.value = '';
+}
+
+function handleMobileSearch(e) {
+  e.preventDefault();
+  const location = mobileSearch.value;
   getWeather(location);
   searchBar.value = '';
 }

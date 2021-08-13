@@ -140,6 +140,10 @@ button:hover {
   justify-self: right;
 }
 
+.mobile-search {
+  display: none;
+}
+
 @media only screen and (max-width: 600px) {
   * {
     font-size: 12px;
@@ -147,10 +151,6 @@ button:hover {
 
   header {
     padding: 0.4rem;
-  }
-
-  h1 {
-    font-size: 1rem;
   }
 
   input {
@@ -178,11 +178,11 @@ button:hover {
     font-size: 16px;
   }
 
-  .location{
+  .location {
     font-size: 40px;
   }
-  
-  .temperature{
+
+  .temperature {
     font-size: 200px;
     justify-self: left;
   }
@@ -191,7 +191,7 @@ button:hover {
     font-size: 40px;
     bottom: 120px;
   }
-  
+
   .feels {
     justify-self: center;
     align-self: center;
@@ -203,5 +203,48 @@ button:hover {
 
   .humidity {
     justify-self: center;
+  }
+
+  #search {
+    display: none;
+  }
+
+  #submit {
+    display: none;
+  }
+
+  header {
+    justify-content: center;
+  }
+
+  .mobile-search {
+    display: block;
+    width: 90vw;
+    max-height: 120px;
+    margin: 1rem;
+    padding: 30px 30px 10px 10px;
+    background: rgba(255, 255, 255, 0.329);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(9.5px);
+    -webkit-backdrop-filter: blur(9.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .mobile-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+  }
+
+  #mobile-search {
+    width: 100%;
+    border: none;
+    text-align: center;
+  }
+
+  #mobile-submit {
+    width: 100%;
+    border-radius: 10px;
   }
 }
