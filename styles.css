@@ -247,7 +247,7 @@ input:checked + .slider:before {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 20px 40px 80px 80px 20px;
     grid-template-areas:
-      'description description description'
+      'description description switch'
       'location location location'
       'temp temp temp'
       'temp temp temp'
