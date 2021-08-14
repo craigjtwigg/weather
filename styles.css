@@ -327,4 +327,14 @@ input:checked + .slider:before {
     width: 100%;
     border-radius: 10px;
   }
+
+  #cel {
+    top: 8px;
+    right: 20px;
+  }
+
+  #far {
+    top: 8px;
+    left: 42px;
+  }
 }
