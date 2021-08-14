@@ -80,8 +80,8 @@ function handleSearch(e) {
 
 function handleMobileSearch(e) {
   e.preventDefault();
-  const location = mobileSearch.value;
-  getWeather(location);
+  activeLocation = mobileSearch.value;
+  getWeather(activeLocation);
   searchBar.value = '';
 }
 

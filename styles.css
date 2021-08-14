@@ -329,12 +329,12 @@ input:checked + .slider:before {
   }
 
   #cel {
-    top: 8px;
+    top: 6px;
     right: 20px;
   }
 
   #far {
-    top: 8px;
-    left: 42px;
+    top: 6px;
+    left: 35px;
   }
 }
