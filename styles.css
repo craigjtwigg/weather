@@ -335,6 +335,6 @@ input:checked + .slider:before {
 
   #far {
     top: 6px;
-    left: 35px;
+    left: 31px;
   }
 }
